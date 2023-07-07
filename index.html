@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta contribution="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Glen Loo</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" >
+  </head>
+  <body>
+    
+    <!-- Navbar Section -->
+    <nav class="navbar">
+      <div class="navbar__container">
+        <a href="#home" id="navbar__logo"><b>Glen Loo</b></a>
+        <div class="navbar__toggle" id="mobile-menu">
+        </div>
+        <ul class="navbar__menu">
+          <li class="navbar__item">
+            <a href="#home" class="navbar__1" id="home-page"><b>About Me</b><i class="fa-solid fa-user"></i></a>
+          </li>
+          <li class="navbar__item">
+            <a href="#about" class="navbar__2" id="about-page"><b>Achievements</b><i class="fa-solid fa-trophy"></i></a>
+          </li>
+          <li class="navbar__item">
+            <a href="#services" class="navbar__3" id="services-page">
+              <b>Projects</b>
+              <i class="fa-solid fa-flask"></i>
+            </a>
+          </li>
+          <li class="navbar__btn">
+            <a href="https://github.com/jawgemo" class="button" id="github" target="_blank"><b>GitHub</b><i class="fa-brands fa-github"></i></a>
+          </li>
+        </ul>
+      </div>
+    </nav> 
+
+    <!-- Hero Section / About Me -->
+    <div class="hero" id="home">
+      <div class="hero__container">
+        <h1 class="hero__heading" style="font-weight: normal;">Hi! I'm Glen Loo</h1>
+        <p class="hero__description">I'm a Secondary 4 student at Chua Chu Kang Secondary. I have an 
+          interest <br> in the field of Cybersecurity as well as research and development. <br> When I'm not coding, I'm usually out doing sports</p>
+          <div class="hero__container">
+            <div class="hero__img--container">
+              <div class="hero__img--card"><i class="fas fa-layer-group"></i></div>
+            </div>
+      </div>
+    </div>
+
+    <!-- About Section / Achievements -->
+    <div class="main" id="about">
+      <div class="main__container">
+        <div class="main__img--container">
+        </div>
+        <div class="main__content">
+          <h1 style="font-weight: normal;">Achievements</h1>
+        
+        </div>
+      </div>
+      <!--About Section / Achievements (table)-->
+<div class="main__table">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+  />
+
+  <style>
+    th {
+      background-color: #fff;
+      color: #000;
+      font-size: 12px; /* Adjust the font size as per your preference */
+      padding: 4px; /* Adjust the padding as per your preference */
+    }
+
+    td {
+      font-size: 12px; /* Adjust the font size as per your preference */
+      padding: 4px; /* Adjust the padding as per your preference */
+    }
+
+    .table {
+      max-width: 1000px; /* Adjust the maximum width as per your preference */
+      margin: 0 auto; /* Center the table horizontally */
+    }
+  </style>
+
+  <table class="table table-striped">
+    <tr class="bg-info">
+      <th data-column="Achievements" data-order="desc">Achievements</th>
+      <th data-column="year" data-order="desc">Year &#9650 </th>
+    </tr>
+
+    <tbody id="myTable"></tbody>
+  </table>
+
+  <script>
+    var myArray = [
+      {
+        'Achievements': 'Python Programming Workshop',
+        'year': '2021',
+      },
+      {
+        'Achievements': 'Class Chairman',
+        'year': '2022',
+      },
+      {
+        'Achievements': 'Chairperson for VIA projects in the Badminton CCA',
+        'year': '2022',
+      },
+      {
+        'Achievements': 'AEM on Applied Design Thinking at Temasek Polytechnic',
+        'year': '2022',
+      },
+      {
+        'Achievements': 'Represented the school in Singapore Junior Chemistry Olympiad',
+        'year': '2023',
+      },
+    ];
+
+    $('th').on('click', function () {
+      var column = $(this).data('column');
+      var order = $(this).data('order');
+
+      if (order == 'desc') {
+        $(this).data('order', 'asc');
+        myArray = myArray.sort((a, b) => (a[column] > b[column] ? 1 : -1));
+      } else {
+        $(this).data('order', 'desc');
+        myArray = myArray.sort((a, b) => (a[column] < b[column] ? 1 : -1));
+      }
+      buildTable(myArray);
+    });
+
+    buildTable(myArray);
+
+    function buildTable(data) {
+      var table = document.getElementById('myTable');
+      table.innerHTML = '';
+      for (var i = 0; i < data.length; i++) {
+        var row = `<tr>
+                    <td>${data[i].Achievements}</td>
+                    <td>${data[i].year}</td>
+                  </tr>`;
+        table.innerHTML += row;
+      }
+    }
+  </script>
+</div>
+
+      
+</script>
+      </div>
+      
+    </div>
+
+    <!-- Services Section / Projects -->
+    <div class="services" id="services">
+      <h1 style="font-weight: normal;">Projects</h1>
+      <div class="services__wrapper">
+        <div class="services__card">
+          <h2>BMI Calculator</h2>
+          <p>This BMI Calculator was my 1st ever programming project using Python. I cretead this project to apply what I've been taught in a Python Programming Workshop.
+            This calculator was targeted towards 16-17 year olds
+          </p>
+          <div><a href="https://github.com/jawgemo/BMI-Calculator" class="services__btn" target="_blank"><button>GitHub</button></a></div>
+        </div>
+        <div class="services__card">
+          <h2>Website</h2>
+          <p>This website is my portfolio and it was coded using HTML, CSS and JavaScript. I learnt the baiscs of website building through online tutorials such as Youtube and 
+            many more.
+          </p>
+          <div class="services__btn"><button>GitHub</button></div>
+          
+        </div>
+        
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Smooth scrolling
+      const navbarLinks = document.querySelectorAll('.navbar__links');
+    
+      navbarLinks.forEach((link) => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+    
+          const target = document.querySelector(link.getAttribute('href'));
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+          });
+        });
+      });
+    </script>
+
+
+    <script src="app.js"></script>
+  </body>
+</html>
